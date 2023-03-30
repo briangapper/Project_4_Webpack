@@ -11,5 +11,6 @@ module.exports = {
                 loader: 'babel-loader' // babel-loader that allow us to use webpack on our JavaScript files
             }
         ]
-    }
+    },
+    mode: 'production' 
 }
