@@ -12,5 +12,5 @@ module.exports = {
             }
         ]
     },
-    mode: 'production' 
+    mode: 'none' 
 }
