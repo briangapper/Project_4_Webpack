@@ -139,6 +139,8 @@ __webpack_require__.r(__webpack_exports__);
 console.log(_js_nameChecker__WEBPACK_IMPORTED_MODULE_1__.nameChecker)
 
 alert('I exist!')
+alert('I exist!')
+alert('I exist!')
 })();
 
 /******/ })()
