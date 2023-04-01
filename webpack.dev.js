@@ -1,10 +1,15 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: './src/client/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js'
+    },
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
@@ -26,10 +31,11 @@ module.exports = {
             // Simulate the removal of files
             dry: true,
             // Write Logs to Console
-            verbose: true,
+            verbose: false,
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
-        })
+        }),
+        new BundleAnalyzerPlugin()
     ]
-}
+};

@@ -1,10 +1,16 @@
-var path = require('path')
+const path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
 
 app.use(express.static('dist'))
+app.use((req, res, next) => {
+    if (req.url.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    }
+    next();
+  });
 
 console.log(__dirname)
 
